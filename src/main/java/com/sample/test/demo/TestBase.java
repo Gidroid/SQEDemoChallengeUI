@@ -1,10 +1,12 @@
 package com.sample.test.demo;
 
-import static org.testng.Assert.fail;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import static org.testng.Assert.fail;
 
 public class TestBase {
 
@@ -16,7 +18,7 @@ public class TestBase {
     public void init() throws Throwable {
         config = new Configuration();
         url = config.getUrl();
-        initializelDriver();
+        initializeDriver();
         navigateToSite();
     }
 
@@ -33,18 +35,13 @@ public class TestBase {
         }
     }
 
-    private void initializelDriver() {
+    private void initializeDriver() {
         if (config.getBrowser().equalsIgnoreCase("chrome")) {
-            if (config.getPlatform().equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/mac/chromedriver");
-            } else {
-                System.setProperty("webdriver.chrome.driver",
-                        "src/test/resources/chromedriver/windows/chromedriver.exe");
-            }
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
         else {
-            fail("Unsupported bfrowser " + config.getBrowser());
+            fail("Unsupported browser " + config.getBrowser());
         }
        
     }
