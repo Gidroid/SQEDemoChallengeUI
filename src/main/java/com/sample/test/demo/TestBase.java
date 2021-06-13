@@ -43,8 +43,5 @@ public class TestBase {
         else {
             fail("Unsupported browser " + config.getBrowser());
         }
-       
     }
-
-
 }
