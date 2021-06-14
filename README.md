@@ -47,5 +47,35 @@ We will be evaluating
 
 #### Test Cases
 
- 1.  
+ 1. Labels text
+ 2. Header text
+ 3. User cannot select more toppings than specified in pizza type
+ 4. User cannot type character, negative or fractional values into “quantity” input
+ 5. The max value that user can type into “quantity” input
+ 6. User cannot edit “cost” textbox
+ 7. “Cost” textbox displayed correct value
+ 8. The maximum value “cost” textbox can display
+ 9. Max number of characters for “name” input
+ 10. “name” input support other languages
+ 11.  “name” input support special symbols
+ 12. Max number of characters for “email” input
+ 13. “email” input support other languages
+ 14.  “email” input support special symbols
+ 15. Email format validation on “email” input
+ 16. Max number of characters for “phone” input
+ 17. Phone format validation on “phone” input
+ 18. User can’t type + into “phone” input
+ 19. User can’t type non numerical symbols into “phone” input
+ 20. User can check only one payment method
+ 21. “Reset” button will reset form to its default state
+ 22. “Order” button will show dialog window
+ 23. Dialog window can fully display text
+ 24. Dialog window has “close” button
+ 25. User cannot interact with form until he close dialog window
+ 26. Happy path:
+     1. dialog window contains “Thank you for your order!” text on one line, “Total:” with total cost on second line and selected pizza type on third line
+     2. Form is reset to default state
+ 27. Unhappy path:
+     1. dialog window contains error messages describing what user forgot to specify or typed incorrectly. 
+     2. Form is not reset to default state
 
